@@ -1,0 +1,131 @@
+Legende:
+ °==      normal erklärt, ohne Praxis
+ °°       nur erwähnt
+ °°?      im Wesentlichen nur erwähnen, vieles noch unklar
+ °??      noch unklar
+ °#!      Praxis!
+ <<??>>   noch zu klären, wer es macht
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*** Tag 1
+Ankündigung: 
+    Am ersten Tag werden alle wesentlichen Sprachmerkmale von Ruby vorgestellt
+    und die wichtigsten davon praktisch erprobt.
+    - Syntax und Konventionen
+    - Iteratoren, Blöcke, Closures
+    - Konsequenzen der dynamischen Typisierung
+    - Das Ruby-Objektmodell
+    - Metaprogrammierung
+
+
+++++ Block1  2 Std ++++
+
+** Ruby-Elementar 30min
+* Zahlen, Strings
+* Variablen
+* Methoden
+* °#! irb
+
+** Ruby-OO 40min
+* Klassen
+* Klassenvariablen, -methoden
+* Reflection: methods, instance_methods, ...
+
+** Iteratoren, Blöcke, Kontrollstrukturen  40min
+* Blöcke
+* Syntax der Kontrollstrukturen if, case, while, 
+* °#! Var-Gültigkeit, Closures
+* °#! Iteratoren
+* catch/try, Exceptions
+
+
+++++ Block2 (3 Std) ++++
+   Ruby-Objektmodel 90min  <<SV>>
+
+** Ruby-Standard-Objektmodel 30min
+* Vererbung, Superklasse, 
+* °#! Modules, Module-Mixin
+
++ einmal Durchatmen +
+
+** Ruby-Spezialitäten im Objektmodell 60min
+* °#! Eigenklasse
+obj << Eigenklasse < Klasse
+* °° Exceptions definieren
+
+++ Minipause 10min ++
+
+** Meta-Programmierung 80min
+* °#! method_missing, 
+* const_missing
+* °#! define_method, ...
+
+
+++++  Block3 (2 Std) ++++
+
+** Threads 20min
+* 
+
+** Weiteres 60min
+* °° Proc#binding
+* ObjectSpace
+
+** Fragen und Antworten 30min
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*** Tag 2
+Ankündigung: 
+    Der zweite Tag gilt der praktischen Seite, es werden häufig benutzte 
+    Bibliotheken, Frameworks und Implementationen vorgestellt.
+    - Automatisiertes Testen mit Test::Unit und RSpec
+    - Web-Frameworks RubyOnRails und Merb mit ActiveRecord und Datamapper
+    - Unterschiede zwischen Ruby 1.8 und 1.9
+    - Ruby auf Java-Basis: JRuby
+
+
+++++ Block1  2 Std ++++
+
+** Bibliotheken, Testunterstützung 
+* rubygems 30min <<THO>>
+  cmd-Zeile, Versions-Bedingungen, Quellen im Netz
+* °== Test::Unit 20min <<THO>> 
+  °?? Metaprog-Aspekte
+* °#! RSpec 40min <<SV>>
+  °== Metaprog-Aspekte
+* °== Logging 10min <<THO>>
+* °°  Debugger
+* °?? Facets <<SV>>
+
+++++ Block2  3 Std ++++
+   Anwendung in Rails und anderen Bibliotheken
+
+** °#! Rails 90min <<THO>>
+*  Scaffolding, falls Anfänger da sind
+*  Anwendung von Metaprogrammierung in AR 20min <<SV>>
+*  Zusammenspiel von Controller und Views 20min<<SV>>
+*  Fragen zu Ruby-Aspekten von Rails
+
+++ Minipause 10min ++
+
+** °== Datamapper/Merb 30min <<SV>>
+
+** °°? Desktop-GUI-Programmierung 30min <<SV>>
+* °° Tk, Wx, reactive  <<SV>>
+* °° Fx  <<THO>>
+
+++++ Block3  2 Std ++++
+
+** Implementierungen, 50min
+* 1.8 <=> 1.9.1 30min <<??>>
+  Hash-Syntax, Encodings, fileutis, gems fehlen
+* °== JRuby 15min <<SV>>
+* °° andere Imple: Rubinius
+
+** Referenzen 30min
+* IDEs 15min
+* Bücher
+* Webseiten, Blogs
+
+** Fragen und Antworten 40min
