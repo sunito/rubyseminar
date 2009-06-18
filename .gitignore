@@ -3,4 +3,7 @@
 *.log
 *.aux
 *.snm
+*.nav
+*.toc
+*.out
 
