@@ -1,13 +1,21 @@
  
 \documentclass{beamer}
-\usepackage[latin1]{inputenc}
+
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc} 
+
+\usepackage{listings} 
+% \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} 
+ 
+
 \usetheme{Warsaw}
 \title[Ruby]{Ruby Features\\Die spannenden Features von Ruby}
 \author{Sven Suska, Thomas Preymesser}
 %\institute{Math-linux.com}
 \date{2009-Juni-18}
 \begin{document}
-
+\lstset{language=Ruby}
 \begin{frame}
 \titlepage
 \end{frame}
@@ -28,4 +36,51 @@ schlechte Thread-Unterstützung
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+  Automatisierte Tests mit Ruby
+  \begin{itemize}
+    \item<1-> TestUnit (Standard--Bibliothek in Ruby)
+    \item<2-> RSpec (separat zu installieren)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+  Automatisierte Tests mit Ruby
+  \begin{itemize}
+    \item TestUnit (Standard--Bibliothek in Ruby)
+    \pause
+    \item RSpec 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+
+ \frametitle{Warum testen?}
+  Warum automatisierte Tests?
+  \begin{itemize}
+    \item Leicht auf Knopfdruck aufzurufen
+    \item Solide Basis an Tests bei gr"o"seren Anwendungen
+    \item Vertrauen bei Modifikation der Anwendung
+    \item Test ''dokumentieren'' Verwendung von Code
+    \item Test-Driven-Development (TDD)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[containsverbatim]
+  \begin{lstlisting}[fragile,frame=single,caption={konto.rb}]
+class Konto
+  attr_reader :saldo
+  
+  def initialize(saldo=0)
+    @saldo = saldo
+  end
+    
+  def einzahlen(betrag)
+    @saldo = @saldo + betrag
+  end
+end
+  \end{lstlisting}
+\end{frame}
 \end{document}
