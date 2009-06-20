@@ -21,6 +21,7 @@ Ankündigung:
 
 
 ++++ Block1  2 Std ++++
+"ruby-start.tex"
 
 ** Ruby-Elementar 30min
 * Zahlen, Strings
@@ -42,6 +43,7 @@ Ankündigung:
 
 
 ++++ Block2 (3 Std) ++++
+"ruby-objektmodell.tex"
    Ruby-Objektmodel 90min  <<SV>>
 
 ** Ruby-Standard-Objektmodel 30min
