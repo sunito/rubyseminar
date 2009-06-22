@@ -16,7 +16,7 @@
 \date{2009-Juni-18}
 \begin{document}
 \lstset{language=Ruby}
-\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
+\lstset{basicstyle=\small,numbers=left, numberstyle=\tiny, numbersep=5pt}
 \begin{frame}
 \titlepage
 \end{frame}
@@ -49,7 +49,7 @@ Yukihiro ''matz'' Matsumoto
 \end{frame}
 
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   Automatisierte Tests mit Ruby
   \begin{itemize}
     \item TestUnit (Standard--Bibliothek in Ruby)
@@ -60,7 +60,7 @@ Yukihiro ''matz'' Matsumoto
 
 \begin{frame}
 
- \frametitle{Warum testen?}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   Warum automatisierte Tests?
   \begin{itemize}
     \item Leicht auf Knopfdruck aufzurufen
@@ -72,21 +72,17 @@ Yukihiro ''matz'' Matsumoto
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  \frametitle{Automatisierte Tests mit Ruby}
-%  \begin{lstlisting}[fragile,frame=single,caption={konto.rb}]
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
 \lstinputlisting[frame=single,caption={konto.rb}]{code/tests/testunit/konto.rb}
-%  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  \frametitle{Automatisierte Tests mit Ruby}
-  % \begin{lstlisting}[fragile,frame=single,caption={testkonto.rb}]
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
 \lstinputlisting[frame=single,caption={test$_$konto.rb}]{code/tests/testunit/test_konto.rb}
-  % \end{lstlisting}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   \begin{itemize}
     \item Namen der Testmethoden beginnen mit '\texttt{test\_}'
     \item Reihenfolge der Tests ist {\bf nicht} die Reihenfolge im Source
@@ -94,16 +90,26 @@ Yukihiro ''matz'' Matsumoto
     \item Aufruf einer einzelnen Testmethode:\\ '\texttt{ruby test\_konto.rb --name test\_anfangssaldo}'
     \item Mehrere Test--Files k"onnen zu Test--Suites zusammengefa"st werden
     \item GUI-Ausgabe statt nur Text m"oglich
+    \item Gem ZenTest (autotest)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
+  Meta-Programming / Reflection
+  \begin{itemize}
+    \item at\_exit
+    \item methods ('test\_')
   \end{itemize}
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  \frametitle{Automatisierte Tests mit Ruby}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   \lstinputlisting[frame=single,caption={Resultat}]{code/tests/testunit/test_result}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   Test::Unit assertions
   \begin{itemize}
     \item assert
@@ -120,12 +126,12 @@ Yukihiro ''matz'' Matsumoto
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   \lstinputlisting[frame=single,caption={setup / teardown}]{code/tests/testunit/setupteardown.rb}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
 Optionale Methoden 
 \begin{itemize}
   \item setup
@@ -135,8 +141,43 @@ werden vor bzw. nach jedem Test aufgerufen
 \end{frame}
 
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
- lsjkdflsjfal 
+  \frametitle{Logging}
+  \begin{itemize}
+    \item Klasse Logger in Standard--Library
+    \item log4r als Gem
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Logging}
+  \lstinputlisting[frame=single,caption={Logging Beispiel}]{code/logging/loggingbeispiel.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Logging}
+  \lstinputlisting[frame=single,caption={Logging Ausgabe}]{code/logging/logging_result}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Logging}
+  Logging-Level:
+  \begin{itemize}
+    \item FATAL: an unhandleable error that results in a program crash
+    \item ERROR: a handleable error condition
+    \item WARN:	a warning
+    \item INFO:	generic (useful) information about system operation
+    \item DEBUG: low-level information for developers 
+  \end{itemize}
+
+  M"ogliche Anpassungen:
+  \begin{itemize}
+    \item \texttt{log.datetime\_format = ''\%H:\%M:\%S''}
+    \item \texttt{log = Logger.new(''mein.log'', 5, 10*1024)}
+    \item \texttt{logger = Logger.new('foo.log', 'daily')}
+    \item \texttt{logger = Logger.new('foo.log', 'weekly')}
+    \item \texttt{logger = Logger.new('foo.log', 'monthly')}
+ 
+  \end{itemize}
 \end{frame}
 
 \begin{frame}

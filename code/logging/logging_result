@@ -1,0 +1,6 @@
+W, [2009-06-22T15:36:42.943998 #25615]  WARN -- : 
+         Nothing to do!
+F, [2009-06-22T15:36:42.944749 #25615] FATAL -- : 
+         Caught exception; exiting
+F, [2009-06-22T15:36:42.944971 #25615] FATAL -- : 
+         divided by 0 (ZeroDivisionError)
