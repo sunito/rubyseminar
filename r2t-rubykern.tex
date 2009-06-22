@@ -16,6 +16,7 @@
 \date{2009-Juni-18}
 \begin{document}
 \lstset{language=Ruby}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt}
 \begin{frame}
 \titlepage
 \end{frame}
@@ -71,35 +72,84 @@ Yukihiro ''matz'' Matsumoto
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  \begin{lstlisting}[fragile,frame=single,caption={konto.rb}]
-class Konto
-  attr_reader :saldo
-  
-  def initialize(saldo=0)
-    @saldo = saldo
-  end
-    
-  def einzahlen(betrag)
-    @saldo = @saldo + betrag
-  end
-end
-  \end{lstlisting}
+  \frametitle{Automatisierte Tests mit Ruby}
+%  \begin{lstlisting}[fragile,frame=single,caption={konto.rb}]
+\lstinputlisting[frame=single,caption={konto.rb}]{code/tests/testunit/konto.rb}
+%  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[containsverbatim]
-  \begin{lstlisting}[fragile,frame=single,caption={konto.rb}]
-class TestKonto < Test::Unit::Testcase
-  attr_reader :saldo
+  \frametitle{Automatisierte Tests mit Ruby}
+  % \begin{lstlisting}[fragile,frame=single,caption={testkonto.rb}]
+\lstinputlisting[frame=single,caption={test$_$konto.rb}]{code/tests/testunit/test_konto.rb}
+  % \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+  \begin{itemize}
+    \item Namen der Testmethoden beginnen mit '\texttt{test\_}'
+    \item Reihenfolge der Tests ist {\bf nicht} die Reihenfolge im Source
+    \item Reihenfolge der Tests ist {\bf nicht} definiert
+    \item Aufruf einer einzelnen Testmethode:\\ '\texttt{ruby test\_konto.rb --name test\_anfangssaldo}'
+    \item Mehrere Test--Files k"onnen zu Test--Suites zusammengefa"st werden
+    \item GUI-Ausgabe statt nur Text m"oglich
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[containsverbatim]
+  \frametitle{Automatisierte Tests mit Ruby}
+  \lstinputlisting[frame=single,caption={Resultat}]{code/tests/testunit/test_result}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+  Test::Unit assertions
+  \begin{itemize}
+    \item assert
+    \item assert\_equal
+    \item assert\_not\_equal
+    \item assert\_nil
+    \item assert\_not\_nil
+    \item assert\_kind\_of
+    \item assert\_raise(Exception) \{ ... \}
+    \item assert\_nothing\_raised(Exception) \{ ... \}
+    \item assert\_in\_delta
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[containsverbatim]
   
-  def initialize(saldo=0)
-    @saldo = saldo
-  end
-    
-  def einzahlen(betrag)
-    @saldo = @saldo + betrag
-  end
-end
-  \end{lstlisting}
+  \lstinputlisting[frame=single,caption={setup / teardown}]{code/tests/testunit/setupteardown.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+Optionale Methoden 
+\begin{itemize}
+  \item setup
+  \item teardown
+\end{itemize}
+werden vor bzw. nach jedem Test aufgerufen
+\end{frame}
+
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+ lsjkdflsjfal 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Unterschiede 1.8.x / 1.9.x}
+ \begin{itemize}
+   \item<1->Encoding
+   \item<2->String#each \arrow String#each_line
+   \item<3->viele Gems funktionieren unter 1.9 noch nicht (www.isitruby19.com)
+   \item<4->"ABC"[0] => Ruby 1.8: 65, Ruby 1.9: "A"
+   \item<5->Interface f"ur C-Extensions ge"andert
+   \item ... 
+ \end{itemize}
+
 \end{frame}
 
 \end{document}

@@ -1,0 +1,9 @@
+$ ruby test_konto.rb 
+Loaded suite test_konto
+Started
+..
+
+Finished in 0.001246468 seconds.
+
+2 tests, 3 assertions, 0 failures, 0 errors, 
+   0 pendings, 0 omissions, 0 notifications
