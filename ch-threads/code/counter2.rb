@@ -8,7 +8,7 @@ class Counter < Monitor
   def tick
     synchronize do        # 3
       @count += 1
-    end
+    end                   # 3
   end
 end
 
