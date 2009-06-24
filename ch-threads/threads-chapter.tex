@@ -1,0 +1,88 @@
+\begin{frame}
+  \frametitle{Threads}
+  \lstinputlisting[frame=single,caption={Kuchen backen}]{ch-threads/code/kuchenbacken.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  \lstinputlisting[frame=single,caption={Kuchen backen Ausgabe}]{ch-threads/code/kuchenbacken_ergebnis}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  \begin{itemize}
+    \item Jeder Thread l"auft parallel zum Hauptprogramm
+    \item Ruby Threads sind Threads innerhalb des Interpreters
+    \begin{itemize}
+      \item + portabel auf allen Systemen
+      \item - keine Mehrprozessor-Systeme unterst"utzt
+      \item - System-Calls blockieren andere Threads im Interpreter
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Thread Variablen}
+  Variablen in Threads
+  \begin{itemize}
+    \item externe Variablen
+    \item Thread-lokale Variablen
+    \item Thread Austausch Variablen \\
+          \texttt{Thread.current['zeit'] = 15}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exceptions in Threads}
+  Exceptions in Threads
+  \begin{itemize}
+    \item \texttt{Thread.abort\_on\_exception = false} (default)\\
+       nicht behandelte Exception beendet diesen Thread
+    \item \texttt{Thread.abort\_on\_exception = true}\\
+       nicht behandelte Exception beendet alle Threads
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Threads}
+  Kontrolle des Thread-Schedulers
+  \begin{itemize}
+    \item \texttt{Thread.stop} 
+    \item \texttt{Thread\#run}
+    \item \texttt{Thread.pass}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  \lstinputlisting[frame=single,caption={Kuchen backen}]{ch-threads/code/kuchenbacken2.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  Monitors
+  \lstinputlisting[frame=single,caption={counter.rb}]{ch-threads/code/counter.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  Konkurrierende Zugriffe auf Resource
+  \begin{itemize}
+    \item Problem: \texttt{@counter += 1}\\
+    \pause
+    \item L"osung: Monitor
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  Monitors
+  \lstinputlisting[frame=single,caption={counter.rb}]{ch-threads/code/counter2.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Threads}
+  ThreadGroup ???
+\end{frame}
+
