@@ -1,0 +1,147 @@
+\begin{frame}{Einführung}
+\frametitle{Was ist Ruby?}
+
+\begin{center}
+''Actually, I'm trying to make Ruby natural, not simple.'' 
+\end{center}
+\begin{flushright}
+\emph{Yukihiro ''matz'' Matsumoto}
+\end{flushright}
+
+
+
+\begin{itemize}
+\pause \item Sprache ausdrucksstark\pause, ''natürlich''\pause, flexibel\pause, ''schön''
+\pause \item Konsequent objektorientiert (''everthing is an object'')
+\pause \item Dynamische Typisierung (''duck typing'')
+\pause \item Closures, Metaprogrammierung, offene Klassen
+\pause \item Nachteile: (noch) relativ geringe Verbreitung\pause,  langsam\pause, 
+              schlechte Thread-Unterstutzung
+\end{itemize}
+\end{frame}
+
+%\begin{frame}[containsverbatim]
+\begin{frame}[fragile]
+  \frametitle{Hallo Welt}
+  \begin{itemize}[<+->]
+  \item nil
+  \item 17
+  \item i = 123
+  \item i + 1000
+  \item puts i
+  \end{itemize}
+  \pause
+  Syntaktischer Hauptbestandteil in Ruby sind Ausdrücke ($Expression$s).\\
+  Jeder Ausdruck hat beim Ausführen einen Wert.\\
+  \pause
+  %\item[none]<2->
+  \begin{lstlisting}
+  text = "welt"
+  puts text
+  \end{lstlisting}
+  \pause
+  \lstinline|   puts "hallo " + text + "!"|
+  
+
+\begin{comment}
+  \pause
+  \lstinline|   puts "hallo #{text}!"| \hspace{5em}  (``String-Interpolation'')
+  %\end{itemize}
+\end{comment}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{irb}
+  \begin{center}
+   {\LARGE irb}\\
+   
+   \bigskip
+   "interactive ruby"
+   \bigskip
+   \bigskip
+   \bigskip
+   \bigskip
+   
+  \end{center}
+   shellprompt\$ irb
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ausdrücke und Werte}
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$}l}
+    %{\em Ausdruck}      &   {\em Wert }  \\
+    \lstinline|1|       &   \lstinline|1|  \\
+    \lstinline|1 + 2|   &   \lstinline|3|  \\
+    \lstinline|a = 2|   &   \lstinline|2|  \\
+    \lstinline|1+2; 10+20; 17+4|  &   \lstinline|21|  \\
+    \lstinline|puts 1+2|   &   \lstinline|nil|  \\
+  \end{tabular}
+  
+  \pause
+  Es gibt zwei Arten von Werten.
+  
+  Unmittelbare Werte (sind immer dasselbe Objekt):
+  \begin{lstlisting}
+  17
+  true
+  nil
+  :symbol
+  \end{lstlisting}
+  \pause
+  Referenzierte Werte:
+  \begin{lstlisting}
+  17.0
+  "hallo"
+  []
+  Symbol
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Methoden}
+  Methoden-Definition
+  \begin{lstlisting}
+  def dreifach(wert)
+    wert * 3
+  end
+  \end{lstlisting}
+  \pause
+  Methoden-Aufruf
+  \begin{lstlisting}
+  puts dreifach(2) 
+  \end{lstlisting}
+  $\longrightarrow$ 6
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Methoden-Syntax}
+  Klammersetzung bei Methoden-Parametern ist optional:
+  \begin{lstlisting}
+  def dreifach wert 
+    wert * 3
+  end
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  puts dreifach(2) 
+  puts dreifach 2 
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  puts(dreifach(2)) 
+  \end{lstlisting}
+  
+  \pause
+  \begin{lstlisting}
+  3 + 4 * 5 
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  3 + (4 * 5)
+  \end{lstlisting}
+\end{frame}
+
+
