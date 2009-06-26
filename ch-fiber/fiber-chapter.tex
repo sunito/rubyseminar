@@ -1,5 +1,48 @@
+%======== BEGIN inserted by add_gemeinsam.rb ======================
+\documentclass{beamer}
+\input{../gemeinsam.tex}
+\begin{document}
+\lstset{language=Ruby}
+\lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
+%======== END inserted by add_gemeinsam.rb ======================
 \begin{frame}
   \frametitle{Fiber}
-  \lstinputlisting[frame=single,caption={aufgaben.rb}]{ch-fiber/code/aufgaben.rb}
+  \lstinputlisting[frame=single,caption={aufgaben.rb}]{code/aufgaben.rb}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Fiber}
+  \lstinputlisting[frame=single,caption={Ergebnis}]{code/aufgaben_ergebnis}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fiber}
+  Fiber
+  \begin{itemize}
+    \item "ahnlich wie Threads
+    \item aber Programmautor legt fest, wann und wo R"uckkehr ins aufrufende Programm erfolgt
+    \item auch Semi-Coroutinen genannt
+    \item mittels \texttt{require 'fiber'} auch Transfer zu anderen Fiber m"oglich
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Aufruf externer Programme}
+  Aufruf externer Programme
+  \begin{itemize}
+    \item \texttt{puts `tar archiv.tar /home/tp/sourcecode`}
+    \item oder \texttt{system('tar archiv.tar /home/tp/sourcecode')}
+    \item Fehlercode des Programms in globaler Variable \texttt{\$?}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IO.popen}
+  IO.popen
+  \lstinputlisting[frame=single,caption={popen-beispiel.rb}]{code/popen-beispiel.rb}
+\end{frame} 
+
+%======== BEGIN inserted by add_gemeinsam.rb ======================
+\end{document}
+%======== END inserted by add_gemeinsam.rb ======================
