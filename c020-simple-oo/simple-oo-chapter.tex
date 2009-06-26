@@ -1,0 +1,253 @@
+\documentclass{beamer}
+
+\input{../gemeinsam.tex}
+
+\begin{document}
+\lstset{language=Ruby}
+\lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
+
+\begin{frame}[fragile]
+  \frametitle{Methoden}
+  Methoden-Definition
+  \begin{lstlisting}
+  def dreifach(wert)
+    wert * 3
+  end
+  \end{lstlisting}
+  \pause
+  Methoden-Aufruf
+  \begin{lstlisting}
+  puts dreifach(2) 
+  \end{lstlisting}
+  $\longrightarrow$ 6
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Methoden-Syntax}
+  Klammersetzung bei Methoden-Parametern ist optional:
+  \begin{lstlisting}
+  def dreifach wert 
+    wert * 3
+  end
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  puts dreifach(2) 
+  puts dreifach 2 
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  puts(dreifach(2)) 
+  \end{lstlisting}
+  
+  \pause
+  \begin{lstlisting}
+  3 + 4 * 5 
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}
+  3 + (4 * 5)
+  \end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Objekte und Klassen}
+  Ruby ist fast vollständig objektorientiert. \\ \pause
+  D.h. (fast) alles in Ruby ist ein $Objekt$. \\ \pause
+  Jedes $Objekt$ gehört zu einer $Klasse$. \\ 
+  $Klasse$n enthalten die $Methode$n ihrer $Objekt$e.\\ \pause
+  \vspace{2mm}
+  Mit dem Methodenaufruf \path{.class} erfahren wir die Klasse:
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$}l}
+    \lstinline|1.class|       &   \lstinline|Integer|  \\
+    \lstinline|"abc".class|   &   \lstinline|String|  \\
+    \lstinline|[1,2,3].class| &   \lstinline|Array|  \\
+    \lstinline|String.class|  &   \lstinline|Class|  \\
+    \lstinline|Class.class|   &   \lstinline|Class|  \\
+  \end{tabular}
+  Auch $Klasse$n sind $Objekt$e. \\ \pause  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Empfänger von Methoden}
+  Methodenaufrufe haben {\bf immer} einen Empfänger ($Receiver$).\\ \pause
+  Wenn dieser nicht angegeben ist, wird das aktuelle Objekt (\bls{self)} 
+  als Empfänger verwendet.\\
+  Ein expliziter Empfänger wird mit \path{.} verknüpft vorangestellt:
+  \begin{center}
+    \lstinline|receiver.methodenname|
+  \end{center}
+
+  \pause \medskip 
+  In unseren anfänglichen Beispielen war der Empfänger immer implizit. \\
+  Das \path{self}-Objekt war hier \path{main}. \\
+  \pause
+  Beispiele von Exliziten Empfängern:
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    %{\em Ausdruck}      &   {\em Wert }  \\
+    \lstinline|1.class|       &   \lstinline|Integer|  \\
+    \lstinline|"abc".upcase|   &   \lstinline|"ABC"|  \\
+    \lstinline|[5, 2, 4].max|   &   \lstinline|5|  \\
+    \lstinline|10.+ 20|  &   \lstinline|30|  \\
+    \lstinline|10 + 20|  &   \lstinline|30|  \\
+  \end{tabular}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dynamische Typisierung}
+  Der Empfänger bestimmt die tatsächlich aufgerufene $Methode$.\\
+  \smallskip
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    %{\em Ausdruck}      &   {\em Wert }  \\
+    \lstinline|"abc".reverse|   &   \lstinline|"cba"|  \\
+    \lstinline|[1,2,3].reverse|   &   \lstinline|[3,2,1]|  \\
+  \end{tabular}
+  \pause
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    \lstinline|10.+ 20|  &   \lstinline|30|  \\
+    \lstinline|"10".+ "20"|  &   \lstinline|"1020"|  \\
+  \end{tabular}
+  
+  \medskip
+  \pause
+  Wir können Code schreiben ohne den Typ der Objekte zu kennen ("Duck Typing").\\ 
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    \lstinline|dreifach(10)|       &   \lstinline|30|  \\
+    \lstinline|dreifach("hallo")|  &   \lstinline|"hallohallohallo"|  \\
+  \end{tabular}
+  
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Vordefinierte Container-Typen}
+  Array
+  \begin{itemize}[<+->]
+  \item \lstinline|[1,2,3]|
+  \item \lstinline|["a","b","c"]|
+  \item \lstinline|[1,"hallo",true]|
+  \end{itemize}
+  
+  \bigskip
+  Hash
+  \begin{itemize}[<+->]
+  \item \lstinline|{:a => "wert1", :b => "wert2"}|
+  \end{itemize}
+
+  Nur Ruby 1.9:
+  \begin{itemize}[<+->]
+  \item \lstinline|{a: "wert1", b: "wert2"}|
+  \end{itemize}
+  
+  \pause
+  Die geschweiften Klammern können weggelassen werden, wenn keine
+  Ambiguitäten auftreten können.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Klassen Vererbung}
+  Klassen werden mit \bls{class} definiert:
+  \begin{lstlisting}
+ class MeineEnte 
+   def quak
+     puts "Quak, quak"
+   end
+ end
+  \end{lstlisting}
+  \pause
+  Objekt erzeugen mit der Methode \bls{new}:
+  \begin{lstlisting}
+ ente = MeineEnte.new
+ ente.quak
+  \end{lstlisting}
+  \pause
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    \lstinline|ente.class|              &    \lstinline|MeineEnte|  \\
+    \lstinline|ente.is_a?(MeineEnte)|   &    \lstinline|true|  \\
+  \end{tabular}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Reflexion}
+  Ruby besitzt umfassende Möglichkeiten zur Innenschau.
+  
+  \smallskip
+  \begin{tabular}[t]{l@{\hspace{5pt}$\longrightarrow$\hspace{2pt}}l}
+  \lstinline|ente.class|             & \lstinline|MeineEnte|  \\
+  \lstinline|ente.respond_to? :quak| & \lstinline|true|  \\
+  \end{tabular} \\
+  
+  \medskip
+  \lstinline| ente.methods|     \\ 
+  $\longrightarrow$ \lstinline|["inspect", "tap", "clone", ... | \\
+  \hspace{6em}       \lstinline| ... "quak", "untaint", "nil?", "is_a?"] |  \\
+         
+  \medskip    
+  \lstinline| MeineEnte.instance_methods| \\ 
+  $\longrightarrow$  \lstinline|["inspect", "tap", "clone", ...| \\
+  \hspace{6em}       \lstinline| ... "quak", "untaint", "nil?", "is_a?"] |  \\
+  
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Klassen-Vererbung}
+  Eine Superklasse kann hinter \path{\<} angegeben werden:
+  \begin{lstlisting}
+ class MeinString < String
+   def initialize(text)
+     super
+   end
+   def quak
+     "#{self} quakt."
+   end
+ end
+  \end{lstlisting}
+    
+  \pause
+  Dann stehen für Objekte der Klasse \path{MeinString} 
+  alle Methoden der Klasse \path{String} zur verfügung.\\
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    \lstinline|m = MeinString.new("abc")|  &    \lstinline|"abc"|  \\
+    \lstinline|m.quak|  &    \lstinline|"abc quakt."|  \\
+    \lstinline|m.upcase|                & \lstinline|"ABC"|  \\
+    \lstinline|m.class|                  & \lstinline|MeinString|  \\
+    \lstinline|"abc".quak|                  & \lstinline|NoMethodError ...|  \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ruby hat offene Klassen}
+  Wir können alle bestehenden Klassen verändern.
+  \begin{lstlisting}
+ class String
+   def quak
+     "#{self} quakt."
+   end
+ end
+  \end{lstlisting}
+  
+  
+  \pause
+  Das wirkt sich auf alle Objekte dieser Klasse aus, \\
+  auch dann, wenn sie vorher schon existierten!\\
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+    \lstinline|m = "abc"|       &    \lstinline|"abc"|  \\
+    \lstinline|m.quak|          &    \lstinline|"abc quakt."|  \\
+    \lstinline|m.upcase|                & \lstinline|"ABC"|  \\
+    \lstinline|m.class|                  & \lstinline|String|  \\
+    \lstinline|"abc".quak|                  & \lstinline|"abc quakt."|  \\
+  \end{tabular}
+\end{frame}
+
+
+
+\end{document}
