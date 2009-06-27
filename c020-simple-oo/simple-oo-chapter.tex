@@ -10,8 +10,8 @@
   \frametitle{Methoden}
   Methoden-Definition
   \begin{lstlisting}
-  def dreifach(wert)
-    wert * 3
+  class Adresse
+    attr_accessor :name, strasse_nr, :plz, :ort
   end
   \end{lstlisting}
   \pause
@@ -25,8 +25,11 @@
 
 \begin{frame}[fragile]
   \frametitle{Methoden-Syntax}
-  Klammersetzung bei Methoden-Parametern ist optional:
+  Klammersetzung bei Methoden-Def ist auch optional:
   \begin{lstlisting}
+    def dreifach(wert)
+      wert * 3
+    end
   def dreifach wert 
     wert * 3
   end
