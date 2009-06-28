@@ -1,6 +1,10 @@
 \documentclass{beamer}
 
-\input{../gemeinsam.tex}
+%\input{../gemeinsam.tex}
+\newcommand{\ordner}{..}
+\input{\ordner/gemeinsam.tex}
+
+\usepackage{tikz}
 
 \begin{document}
 \lstset{language=Ruby}
@@ -156,7 +160,11 @@
 \begin{frame}[fragile]
   \frametitle{Klassen Vererbung}
   Klassen werden mit \bls{class} definiert:
+  \tikz \draw[thick,rounded corners=8pt]
+(0,0) -- (0,2) -- (1,3.25) -- (2,2) -- (2,0) -- (0,2) -- (2,2) -- (0,0) -- (2,0);
+
   \begin{lstlisting}
+  
  class MeineEnte 
    def quak
      puts "Quak, quak"
