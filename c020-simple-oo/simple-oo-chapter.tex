@@ -5,12 +5,20 @@
 
 \usepackage{tikz}
 
+\usepackage[arrow, matrix, curve]{xy}
+
 \begin{document}
 \lstset{language=Ruby}
 \lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
 
 \begin{frame}[fragile]
   \frametitle{Methoden}
+  \begin{displaymath}
+    \xymatrix{
+        A \ar[r]|f \ar[d]|g & B \ar[d]|{g’} \\
+        D \ar[r]|{f’}       & C }
+  \end{displaymath}
+
   Methoden-Definition
   \begin{lstlisting}
   class Adresse
