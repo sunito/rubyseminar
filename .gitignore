@@ -10,4 +10,5 @@
 *.pdf
 *.vrb
 .~lock*
+.directory
 
