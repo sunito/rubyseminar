@@ -2,14 +2,58 @@
 
 
 \input{../gemeinsam.tex}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,decorations}
+
+\usepackage[arrow,matrix,curve]{xy}
 
 \begin{document}
 \lstset{language=Ruby}
 \lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
 
 \begin{frame}[fragile]
+
+\tikzstyle{format} = [draw, thin, fill=blue!20]
+\tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+
+
   \frametitle{Methoden an Objekten}
-  
+  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1,0) rectangle (10,-2);
+    
+    \path[->]<1-> node[format] (Adresse) {Adresse};
+    \path[->]<1-> node[format, right of=Adresse] (C-Adresse) {Class:Adresse}
+                  (Adresse) edge[bend right] node {eigenclass} (C-Adresse);
+    \path[->]<1-> 
+                  node[medium, below of=Adresse] (adresse) {adresse}
+                  node[medium, below of=C-Adresse] (C-adresse) {Class:adresse}
+                  (Adresse) edge node {ps2pdf} (adresse)
+                            edge node[swap] {gs} (C-adresse);
+\end{tikzpicture}
+
+  \begin{displaymath}
+  \begin{tikzpicture}[draw,thick, fill=blue!20]
+    \xymatrix{
+        %\begin{tikzpicture}
+        \tikz\node[circle] {Circle};
+        %\end{tikzpicture}
+        \ar[r]|f \ar[d]|g & B \ar[d]|{g’} \\
+        D \ar[r]|{f’}       & C }
+  \end{tikzpicture}
+  \end{displaymath}
+\begin{comment}
+     \path[->]<3-> node[format, right of=dvi] (ps) {.ps file}
+                  node[medium, below of=dvi] (screen) {screen}
+                  (dvi) edge node {dvips} (ps)
+                        edge node[swap] {xdvi} (screen);
+
+    \path[->]<1-> (pdf) edge (screen)
+                        edge (print);
+    \path[->, draw]<6-> (tex) -- +(0,1) -| node[near start] {pdf\TeX} (pdf);
+\end{comment}
+
   
 \end{frame}
 
