@@ -1,0 +1,9 @@
+$ ruby ex1.rb 
+5 / -3 = -2
+5 / -2 = -3
+5 / -1 = -5
+ex1.rb:3:in `/': divided by 0 (ZeroDivisionError)
+	from ex1.rb:3:in `block in dividieren'
+	from ex1.rb:2:in `upto'
+	from ex1.rb:2:in `dividieren'
+	from ex1.rb:7:in `<main>'

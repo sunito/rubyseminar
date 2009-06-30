@@ -6,7 +6,8 @@ end
 task :default => :pdf
 
 desc 'alle PDFs erzeugen'
-task :pdf => [:pdf_fiber, :pdf_threads, :pdf_fiber, :pdf_simple_oo]
+task :pdf => [:pdf_fiber, :pdf_threads, :pdf_fiber, :pdf_simple_oo, :pdf_intro,
+             :pdf_exceptions]
 
 desc 'PDF für Fiber erzeugen'
 task :pdf_fiber do
@@ -26,5 +27,15 @@ end
 desc 'PDF für simple-oo erzeugen'
 task :pdf_simple_oo do
   make_tex('c020-simple-oo','simple-oo-chapter.tex')
+end
+
+desc 'PDF für intro erzeugen'
+task :pdf_intro do
+  make_tex('c010-intro','intro-chapter.tex')
+end
+
+desc 'PDF für exceptions erzeugen'
+task :pdf_exceptions do
+  make_tex('cxxx-exceptions','exceptions-chapter.tex')
 end
 
