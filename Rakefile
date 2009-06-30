@@ -18,6 +18,11 @@ task :pdf => [
               :pdf_threads,
              ]
 
+desc 'alles als PDF anzeigen'
+task :show do
+  sh 'showall.rb'
+end
+
 desc 'PDF für Fiber erzeugen'
 task :pdf_fiber do
   make_tex('ch-fiber', 'fiber-chapter.tex')
