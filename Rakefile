@@ -7,6 +7,7 @@ task :default => :pdf
 
 desc 'alle PDFs erzeugen'
 task :pdf => [
+              :pdf_debugger,
               :pdf_exceptions,
               :pdf_eigenclass,
               :pdf_fiber,
@@ -77,5 +78,10 @@ end
 desc 'PDF für logging erzeugen'
 task :pdf_logging do
   make_tex('c540-logging','logging-chapter.tex')
+end
+
+desc 'PDF für debugger erzeugen'
+task :pdf_debugger do
+  make_tex('c550-debugger','debugger-chapter.tex')
 end
 
