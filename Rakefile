@@ -6,8 +6,15 @@ end
 task :default => :pdf
 
 desc 'alle PDFs erzeugen'
-task :pdf => [:pdf_fiber, :pdf_threads, :pdf_fiber, :pdf_simple_oo, :pdf_intro,
-             :pdf_exceptions]
+task :pdf => [:pdf_fiber,
+              :pdf_threads,
+              :pdf_fiber,
+              :pdf_simple_oo,
+              :pdf_intro,
+              :pdf_exceptions,
+              :pdf_eigenclass,
+              :pdf_rubygems,
+              :pdf_fxruby]
 
 desc 'PDF für Fiber erzeugen'
 task :pdf_fiber do
@@ -37,5 +44,20 @@ end
 desc 'PDF für exceptions erzeugen'
 task :pdf_exceptions do
   make_tex('cxxx-exceptions','exceptions-chapter.tex')
+end
+
+desc 'PDF für eigenclass erzeugen'
+task :pdf_eigenclass do
+  make_tex('c110-eigenclass','eigenclass-chapter.tex')
+end
+
+desc 'PDF für rubygems erzeugen'
+task :pdf_rubygems do
+  make_tex('c520-rubygems','rubygems-chapter.tex')
+end
+
+desc 'PDF für fxruby erzeugen'
+task :pdf_fxruby do
+  make_tex('cxxx-fxruby','fxruby-chapter.tex')
 end
 

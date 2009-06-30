@@ -2,5 +2,6 @@
 #
 Dir.glob("*/**/*.pdf").sort.each do |fn|
   p fn
-  puts `xpdf #{fn}`
+  puts `xpdf -fullscreen #{fn}` # Fullscreen
+  # puts `xpdf             #{fn}` # kleines Fenster
 end
