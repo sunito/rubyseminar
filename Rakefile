@@ -12,6 +12,7 @@ task :pdf => [
               :pdf_fiber,
               :pdf_fxruby,
               :pdf_intro,
+              :pdf_logging,
               :pdf_rubygems,
               :pdf_simple_oo,
               :pdf_testunit,
@@ -71,5 +72,10 @@ end
 desc 'PDF für testunit erzeugen'
 task :pdf_testunit do
   make_tex('c510-testunit','testunit-chapter.tex')
+end
+
+desc 'PDF für logging erzeugen'
+task :pdf_logging do
+  make_tex('c540-logging','logging-chapter.tex')
 end
 
