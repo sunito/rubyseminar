@@ -1,0 +1,13 @@
+(rdb:1) h
+Debugger help v.-0.002b
+Commands
+  b[reak] [file:|class:]<line|method>
+  b[reak] [class.]<line|method>
+                             set breakpoint to ...
+  wat[ch] <expression>       set watchpoint to ...
+  cat[ch] (<exception>|off)  set catchpoint to ..
+  b[reak]                    list breakpoints
+...
+(rdb:1) q 
+Really quit? (y/n) y
+

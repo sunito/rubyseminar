@@ -1,0 +1,13 @@
+(rdb:1) b
+Breakpoints:
+  1 ex1.rb:2
+
+(rdb:1) where
+--> #1 ex1.rb:1
+(rdb:1) disp i
+1: i = 
+(rdb:1) cont
+Breakpoint 1, toplevel at ex1.rb:2
+ex1.rb:2:  puts i
+1: i = 1
+

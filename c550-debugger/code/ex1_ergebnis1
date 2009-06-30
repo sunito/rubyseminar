@@ -1,0 +1,17 @@
+$ ruby -r debug ex1.rb 
+Debug.rb
+Emacs support available.
+
+ex1.rb:1:1.upto(10) do |i|
+(rdb:1) list
+[-4, 5] in ex1.rb
+=> 1  1.upto(10) do |i|
+   2    puts i
+   3  end
+(rdb:1) list 1-2
+[1, 2] in ex1.rb
+=> 1  1.upto(10) do |i|
+   2    puts i
+(rdb:1) b 2
+Set breakpoint 1 at ex1.rb:2
+
