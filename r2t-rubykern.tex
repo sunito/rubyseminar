@@ -33,45 +33,6 @@
 
 \input{rubygems-chapter.tex}
 
-\begin{frame}
-  \frametitle{Logging}
-  \begin{itemize}
-    \item Klasse Logger in Standard--Library
-    \item log4r als Gem
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Logging}
-  \lstinputlisting[frame=single,caption={Logging Beispiel}]{code/logging/loggingbeispiel.rb}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Logging}
-  \lstinputlisting[frame=single,caption={Logging Ausgabe}]{code/logging/logging_result}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Logging}
-  Logging-Level:
-  \begin{itemize}
-    \item FATAL: an unhandleable error that results in a program crash
-    \item ERROR: a handleable error condition
-    \item WARN:	a warning
-    \item INFO:	generic (useful) information about system operation
-    \item DEBUG: low-level information for developers 
-  \end{itemize}
-
-  M"ogliche Anpassungen:
-  \begin{itemize}
-    \item \texttt{log.datetime\_format = ''\%H:\%M:\%S''}
-    \item \texttt{log = Logger.new(''mein.log'', 5, 10*1024)}
-    \item \texttt{logger = Logger.new('foo.log', 'daily')}
-    \item \texttt{logger = Logger.new('foo.log', 'weekly')}
-    \item \texttt{logger = Logger.new('foo.log', 'monthly')}
- 
-  \end{itemize}
-\end{frame}
 
 \begin{frame}
  \frametitle{Unterschiede 1.8.x / 1.9.x}
