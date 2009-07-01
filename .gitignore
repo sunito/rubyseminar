@@ -11,4 +11,5 @@
 *.vrb
 .~lock*
 .directory
+nbproject
 
