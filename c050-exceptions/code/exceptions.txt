@@ -1,0 +1,8 @@
+Exception
+-- fatal
+-- NoMemoryError
+...
+-- StandardError
+-- -- ArgumentError
+...
+-- -- ZeroDivisionError
