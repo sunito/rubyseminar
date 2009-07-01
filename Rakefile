@@ -27,17 +27,12 @@ end
 
 desc 'PDF für Fiber erzeugen'
 task :pdf_fiber do
-  make_tex('ch-fiber', 'fiber-chapter.tex')
+  make_tex('c210-fiber', 'fiber-chapter.tex')
 end
 
 desc 'PDF für Threads erzeugen'
 task :pdf_threads do
-  make_tex('ch-threads','threads-chapter.tex')
-end
-
-desc 'PDF für Fiber erzeugen'
-task :pdf_fiber do
-  make_tex('ch-fiber','fiber-chapter.tex')
+  make_tex('c200-threads','threads-chapter.tex')
 end
 
 desc 'PDF für simple-oo erzeugen'
@@ -52,7 +47,7 @@ end
 
 desc 'PDF für exceptions erzeugen'
 task :pdf_exceptions do
-  make_tex('cxxx-exceptions','exceptions-chapter.tex')
+  make_tex('c050-exceptions','exceptions-chapter.tex')
 end
 
 desc 'PDF für eigenclass erzeugen'
@@ -67,7 +62,7 @@ end
 
 desc 'PDF für fxruby erzeugen'
 task :pdf_fxruby do
-  make_tex('cxxx-fxruby','fxruby-chapter.tex')
+  make_tex('c690-fxruby','fxruby-chapter.tex')
 end
 
 desc 'PDF für testunit erzeugen'
