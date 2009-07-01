@@ -84,3 +84,7 @@ desc 'PDF für debugger erzeugen'
 task :pdf_debugger do
   make_tex('c550-debugger','debugger-chapter.tex')
 end
+<<<<<<< HEAD:Rakefile
+=======
+
+>>>>>>> 7fe76e5191f1bcca61a5393b0f5b018f2cf10fc9:Rakefile

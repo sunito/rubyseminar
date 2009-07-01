@@ -7,6 +7,7 @@
 \usepackage{listings} 
 
 % \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} 
+\logo{\includegraphics[width=0.7cm]{../images/ruby.png}}
 
 %\usetheme{Warsaw}
 %\usetheme{Hannover}
@@ -27,9 +28,38 @@
 % whale | wolverine
 
 
-\title[Ruby]{Was kann Ruby?}
+\title[Ruby]{Programmiersprache Ruby}
 \author{Sven Suska, Thomas Preymesser}
 %\institute{}
 \date{2009-Juli-2}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,decorations}
+
+
+\tikzstyle{klasse} = [rectangle, draw, thin, fill=blue!20 ]
+\tikzstyle{objekt} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+
+\tikzset{%
+    class/.style={green,>=triangle 45}
+    }
+\tikzset{%
+    eigenc/.style={very thin,green,>=triangle 45}
+    }
+\tikzset{%
+    superc/.style={thick,red,>=open triangle 45}
+    }
+\tikzset{%
+    method1/.style={thin,blue,bend left=45,to reversed->}
+    }
+\tikzset{%
+    method1r/.style={thin,blue,bend right=45,to reversed->}
+    }
+\tikzset{%
+    methods/.style={thin,blue,bend left=45}
+    }
+
+\newcommand{\klassebox}[2]{\begin{tabular}{l}{\it #1} \\ \hline \tt{#2}\end{tabular}}
 
 \newcommand{\bls}[1]{{\bf\lstinline{#1}}}
