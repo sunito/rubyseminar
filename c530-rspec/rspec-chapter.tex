@@ -4,5 +4,19 @@
 \input{gemeinsam.tex}
 
 \begin{document}
+\begin{frame}[fragile]
+ Arbitrary Block
+  \begin{lstlisting}
+object.should_satisfy {|arg| ...}
+object.should_not_satisfy {|arg| ...}
+  \end{lstlisting}
+
+Equality
+  \begin{lstlisting}
+object.should_equal <value>
+object.should_not_equal <value>
+object.should == <value>
+  \end{lstlisting}
+\end{frame}
 
 \end{document}
