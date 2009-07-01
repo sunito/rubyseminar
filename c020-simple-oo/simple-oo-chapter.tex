@@ -13,13 +13,33 @@
 
 \begin{frame}[fragile]
   \frametitle{Methoden}
-  \begin{displaymath}
-    \xymatrix{
-        A \ar[r]|f \ar[d]|g & B \ar[d]|{g’} \\
-        D \ar[r]|{f’}       & C }
-  \end{displaymath}
 
   Methoden-Definition
+  \begin{lstlisting}
+  class Adresse
+    def name
+      @name
+    end
+  end
+  \end{lstlisting}
+  \pause
+  
+    \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-3,0) rectangle (16,-6);
+    
+    \path[->]
+                  node[klasse] (Adresse) {\klassebox{Adresse}{name}};
+    \pause
+    \path[->]
+                  node[objekt, below left of=Adresse] (adr) {adr}
+                  (adr) edge[class] node[sloped, near end] {class} (Adresse);
+    \pause
+    \path[->]
+                  (adr) edge[method1] node[sloped, near end]{name} (Adresse.west);
+\end{tikzpicture}
+
   \begin{lstlisting}
   class Adresse
     attr_accessor :name, strasse_nr, :plz, :ort
