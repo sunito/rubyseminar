@@ -18,6 +18,8 @@ task :pdf => [
               :pdf_simple_oo,
               :pdf_testunit,
               :pdf_threads,
+              :pdf_quellen,
+              :pdf_ruby19,
              ]
 
 desc 'alles als PDF anzeigen'
@@ -57,7 +59,7 @@ end
 
 desc 'PDF für rubygems erzeugen'
 task :pdf_rubygems do
-  make_tex('c520-rubygems','rubygems-chapter.tex')
+  make_tex('c510-rubygems','rubygems-chapter.tex')
 end
 
 desc 'PDF für fxruby erzeugen'
@@ -67,7 +69,7 @@ end
 
 desc 'PDF für testunit erzeugen'
 task :pdf_testunit do
-  make_tex('c510-testunit','testunit-chapter.tex')
+  make_tex('c520-testunit','testunit-chapter.tex')
 end
 
 desc 'PDF für logging erzeugen'
@@ -78,4 +80,14 @@ end
 desc 'PDF für debugger erzeugen'
 task :pdf_debugger do
   make_tex('c550-debugger','debugger-chapter.tex')
+end
+
+desc 'PDF für quellen erzeugen'
+task :pdf_quellen do
+  make_tex('c780-quellen','quellen-chapter.tex')
+end
+
+desc 'PDF für ruby19 erzeugen'
+task :pdf_ruby19 do
+  make_tex('c700-ruby19','ruby19-chapter.tex')
 end
