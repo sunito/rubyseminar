@@ -16,11 +16,11 @@
 
   Methoden-Definition
   \begin{lstlisting}
-  class Adresse
-    def name
-      @name
-    end
+class Adresse  
+  def ausgabe
+    "nix"
   end
+end
   \end{lstlisting}
   \pause
   
@@ -30,20 +30,27 @@
     \path[use as bounding box] (-3,0) rectangle (16,-6);
     
     \path[->]
-                  node[klasse] (Adresse) {\klassebox{Adresse}{name}};
+                  node[klasse] (Adresse) {\klassebox{Adresse}{zeile}};
     \pause
     \path[->]
-                  node[objekt, below left of=Adresse] (adr) {adr}
+                  node[objekt, below left of=Adresse] (adr) {\klassebox{adr}{@plz = 17268 \\ @ort = Berlin}}
                   (adr) edge[class] node[sloped, near end] {class} (Adresse);
     \pause
-    \path[->]
-                  (adr) edge[method1] node[sloped, near end]{name} (Adresse.west);
+    \path[->]     (adr.east) node[anchor=west,font=\footnotesize] (meth-adr) {.zeile} (adr.east)
+                  (meth-adr) edge[method1,controls=+(0:2) and +(180:2)] node[sloped, near end]{} (Adresse.west);
 \end{tikzpicture}
 
+\begin{comment}
+ , label={[name=meth-adr]above:ausgabe}
+\end{comment}
+
+
   \begin{lstlisting}
-  class Adresse
-    attr_accessor :name, strasse_nr, :plz, :ort
+class Adresse  
+  def ausgabe
+    "nix"
   end
+end
   \end{lstlisting}
   \pause
   Methoden-Aufruf

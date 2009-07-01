@@ -38,8 +38,8 @@
 \usetikzlibrary{arrows,shapes,decorations}
 
 
-\tikzstyle{klasse} = [rectangle, draw, thin, fill=blue!20 ]
-\tikzstyle{objekt} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+\tikzstyle{klasse} = [rectangle, draw, thin, fill=blue!20, text ragged ]
+\tikzstyle{objekt} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em, text ragged]
 
 \tikzset{%
     class/.style={green,>=triangle 45}
@@ -51,7 +51,7 @@
     superc/.style={thick,red,>=open triangle 45}
     }
 \tikzset{%
-    method1/.style={thin,blue,bend left=45,to reversed->}
+    method1/.style={thin,blue,to reversed->}
     }
 \tikzset{%
     method1r/.style={thin,blue,bend right=45,to reversed->}
@@ -60,6 +60,6 @@
     methods/.style={thin,blue,bend left=45}
     }
 
-\newcommand{\klassebox}[2]{\begin{tabular}{l}{\it #1} \\ \hline \tt{#2}\end{tabular}}
+\newcommand{\klassebox}[2]{\begin{tabular}{l}{\it #1} \\ \hline \tt #2 \end{tabular}}
 
 \newcommand{\bls}[1]{{\bf\lstinline{#1}}}
