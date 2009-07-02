@@ -172,25 +172,6 @@ puts adr1.postalcode              # --> NoMethodError
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Methoden an Objekten}
-  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
-    % We need to set at bounding box first. Otherwise the diagram
-    % will change position for each frame.
-    \path[use as bounding box] (-3,0) rectangle (10,-2);
-    
-    \path[->]<1-> node[klasse] (Person) {Person};
-    \path[->]<1-> node[klasse, right of=Person] (C-Person) {Class:Person}
-                  (Person) edge[eigenc] (C-Person);
-    \path[->]<1-> 
-                  node[objekt, below left of=Person] (person) {person}
-                  node[klasse, right of=person] (C-person) {Class:person}
-                  (C-person) edge[superc] (C-Person)
-                  (person) edge[class] node {class} (Person)
-                            edge[eigenc] node {eigenclass} (C-person);
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}[fragile]
 \begin{comment}
   \begin{displaymath}
   \begin{tikzpicture}[draw,thick, fill=blue!20]
