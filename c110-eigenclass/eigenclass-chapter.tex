@@ -9,6 +9,33 @@
 \lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
 
 
+
+\begin{frame}[fragile]
+  \frametitle{Methoden-Lookup}
+  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-3,0) rectangle (16,-6);
+    
+    \path[->]
+                  node[klasse] (Person) {Person};
+    \path[->]
+                  node[klasse, below of=Person, label={[name=lNatPerson]left:}] (NatPerson) {NatPerson}
+                  (NatPerson) edge[superc] 
+                        node[sloped, midway,font=\footnotesize,anchor=south]{superclass}  (Person);
+    \path[->]
+                  node[objekt, below left of=NatPerson] (heinz) {heinz}
+                  (heinz) edge[class] node[sloped, midway, anchor=south] {class} (NatPerson);
+    \pause
+    \path[->]
+                  (heinz.south east) edge[method1,controls=+(0:2) and +(180:2)] (NatPerson.west);
+    \pause
+    \path[->]
+                  (NatPerson.west) edge[methods] (Person.west);
+\end{tikzpicture}
+\end{frame}
+
+
 \begin{frame}[fragile]
   \frametitle{Methoden an Objekten}
   Obwohl in Ruby die Methoden eines Objekts immer in der Klasse des Objekts definiert sind,
@@ -29,10 +56,9 @@ puts adr1.postalcode              # --> NoMethodError
 
 \end{frame}
 
-
 \begin{frame}[fragile]
 
-  \frametitle{Methoden an Objekten}
+  \frametitle{Methoden-Lookup mit Eigenclass}
   \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
     % We need to set at bounding box first. Otherwise the diagram
     % will change position for each frame.
@@ -42,7 +68,7 @@ puts adr1.postalcode              # --> NoMethodError
                   node[klasse] (Person) {Person};
     \path[->]
                   node[klasse, below of=Person, label={[name=lNatPerson]left:}] (NatPerson) {NatPerson}
-                  (NatPerson) edge[superc] (Person);
+                  (NatPerson) edge[superc] node[sloped, midway,font=\footnotesize,anchor=south]{superclass} (Person);
     \path[->]
                   node[objekt, below left of=NatPerson] (heinz) {heinz}
                   (heinz) edge[class] node {class} (NatPerson);
@@ -52,15 +78,19 @@ puts adr1.postalcode              # --> NoMethodError
                   (heinz) edge[eigenc] node {eigenclass} (C-heinz);
     \pause
     \path[->]
-                  (heinz.south east) edge[method1r] (C-heinz.west)
-                  (C-heinz.west) edge[methods] (NatPerson.west)
+                  (heinz.south east) edge[method1r] (C-heinz.west);
+    \pause
+    \path[->]
+                  (C-heinz.west) edge[methods] (NatPerson.west);
+    \pause
+    \path[->]
                   (NatPerson.west) edge[methods] (Person.west);
 \end{tikzpicture}
 \end{frame}
 
 \begin{frame}[fragile]
 
-  \frametitle{Methoden an Objekten}
+  \frametitle{Auch Klassen haben ihre Eigenklassen}
   \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
     % We need to set at bounding box first. Otherwise the diagram
     % will change position for each frame.
@@ -79,13 +109,24 @@ puts adr1.postalcode              # --> NoMethodError
                   node[klasse, right of=heinz] (C-heinz) {Class:heinz}
                   (heinz) edge[eigenc] node {eigenclass} (C-heinz);
     \pause
+    \path[->]
+                  node[klasse, right of=NatPerson] (C-NatPerson) {Class:NatPerson}
+                  (NatPerson) edge[eigenc] (C-NatPerson);
+    \pause
     \path[->]     
                   node[klasse, right of=Person] (C-Person) {Class:Person}
                   (Person) edge[eigenc] (C-Person);
+                  
+    \pause
+%    \path[->]                       (C-heinz) edge[superc] (C-NatPerson);
     \pause
     \path[->]
-                  (heinz.south east) edge[method1r] (C-heinz.west)
-                  (C-heinz.west) edge[methods] (NatPerson.west)
+                  (heinz.south east) edge[method1r] (C-heinz.west);
+    \pause
+    \path[->]
+                  (C-heinz.west) edge[methods] (NatPerson.west);
+    \pause
+    \path[->]
                   (NatPerson.west) edge[methods] (Person.west);
 \end{tikzpicture}
 
@@ -94,9 +135,6 @@ puts adr1.postalcode              # --> NoMethodError
     \path[->]
                   (heinz) edge[method1] (NatPerson.west)
                   (NatPerson.west) edge[methods] (Person.west);
-    \path[->]
-                  node[klasse, right of=NatPerson] (C-NatPerson) {Class:NatPerson}
-                  (NatPerson) edge[eigenc] (C-NatPerson);
  
 \end{comment}
 
@@ -105,7 +143,7 @@ puts adr1.postalcode              # --> NoMethodError
 
 \begin{frame}[fragile]
 
-  \frametitle{Methoden an Objekten}
+  \frametitle{Gesamtbild}
   \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
     % We need to set at bounding box first. Otherwise the diagram
     % will change position for each frame.
