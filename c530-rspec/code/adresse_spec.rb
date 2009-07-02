@@ -8,7 +8,7 @@ describe Adresse do
     @adr = Adresse.new
   end
 
-  it "should work" do
+  it "sollte funktionieren" do
     @adr.zeile == "33"
   end
 end

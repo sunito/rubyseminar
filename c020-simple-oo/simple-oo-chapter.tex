@@ -2,34 +2,36 @@
 
 %\input{../gemeinsam.tex}
 \input{gemeinsam.tex}
+%\usepackage{lmodern}
+\usepackage{beramono}
 
 \begin{document}
 \lstset{language=Ruby}
-\lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
+\lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt, showstringspaces=false, basicstyle=\ttfamily }
 
 \begin{frame}[fragile]
-  \frametitle{Methoden}
-
-  Methoden-Definition
+  \frametitle{Klasse und Objekt}
   \begin{lstlisting}
 class Adresse  
-  def ausgabe
-    "nix"
-  end
+  attr_accessor :plz, :ort
+  def zeile; "#@plz #@ort";  end
 end
+
+adr = Adresse.new
+puts adr.zeile
   \end{lstlisting}
   \pause
   
-    \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    \begin{tikzpicture}[node distance=4cm, auto,>=latex', thick]
     % We need to set at bounding box first. Otherwise the diagram
     % will change position for each frame.
-    \path[use as bounding box] (-3,0) rectangle (16,-6);
+    \path[use as bounding box] (-8,0) rectangle (44,-4);
     
     \path[->]
-                  node[klasse] (Adresse) {\klassebox{Adresse}{zeile}};
+                  node[klasse] (Adresse) {\klassebox{Adresse}{zeile \\ plz \\ ort}};
     \pause
     \path[->]
-                  node[objekt, below left of=Adresse] (adr) {\klassebox{adr}{@plz = 17268 \\ @ort = Berlin}}
+                  node[objekt, below left of=Adresse] (adr) {\klassebox{adr}{@plz = 17268 \\ @ort = Templin}}
                   (adr) edge[class] node[sloped, near end] {class} (Adresse);
     \pause
     \path[->]     (adr.east) node[anchor=west,font=\footnotesize] (meth-adr) {.zeile} (adr.east)
