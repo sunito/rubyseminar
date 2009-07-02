@@ -11,13 +11,17 @@
 
 \begin{frame}[fragile]
   \frametitle{Klasse und Objekt}
-  \begin{lstlisting}
+  \begin{lstlisting}[basicstyle=\footnotesize]
 class Adresse  
   attr_accessor :plz, :ort
   def zeile; "#@plz #@ort";  end
 end
-
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}[basicstyle=\footnotesize]
 adr = Adresse.new
+adr.plz = "17268"
+adr.ort = "Templin"
 puts adr.zeile
   \end{lstlisting}
   \pause
@@ -28,20 +32,19 @@ puts adr.zeile
     \path[use as bounding box] (-8,0) rectangle (44,-4);
     
     \path[->]
-                  node[klasse] (Adresse) {\klassebox{Adresse}{zeile \\ plz \\ ort}};
+                  node[klasse] (Adresse) {\klassebox{Adresse}{ \footnotesize zeile \\ plz \\ ort}};
     \pause
     \path[->]
-                  node[objekt, below left of=Adresse] (adr) {\klassebox{adr}{@plz = 17268 \\ @ort = Templin}}
+                  node[objekt, below left of=Adresse] (adr) 
+                             {\klassebox{adr}{\footnotesize @plz = 17268 \\ @ort = Templin}}
                   (adr) edge[class] node[sloped, near end] {class} (Adresse);
     \pause
     \path[->]     (adr.east) node[anchor=west,font=\footnotesize] (meth-adr) {.zeile} (adr.east)
-                  (meth-adr) edge[method1,controls=+(0:2) and +(180:2)] node[sloped, near end]{} (Adresse.west);
+                  (meth-adr) edge[method1,controls=+(0:2) and +(180:2)] node[sloped, near end,font=\footnotesize]{} (Adresse.west);
 \end{tikzpicture}
 
 \begin{comment}
  , label={[name=meth-adr]above:ausgabe}
-\end{comment}
-
 
   \begin{lstlisting}
 class Adresse  
@@ -56,10 +59,47 @@ end
   puts dreifach(2) 
   \end{lstlisting}
   $\longrightarrow$ 6
+\end{comment}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Klassendefinition}
+  \begin{lstlisting}[basicstyle=\footnotesize]
+class Adresse  
+  attr_accessor :plz, :ort
+  def zeile 
+    "#@plz #@ort"
+  end
+end
+  \end{lstlisting}
+  Klassendefinitionen werden mit \verb|class| eingeleitet.\\ \pause
+  Auch der dann folgende Programmteil besteht aus Ausdrücken, die
+  von oben nach unten evaluiert werden.  
+  \pause
+  
+  Mit \verb|def| wird eine Methode definiert. (Für die Instanz der Klasse).  
+  \pause
+  
+  Das \verb|@|-Symbol kenzeichnet Instanz-Variablen. \\
+  Um auf solche von außerhalb des Objekts zuzugreifen, werden
+  Accessor-Methoden benötigt (Setter/Getter).
+  \pause
+  
+  Dazu nutzt man am einfachsten \verb|attr_reader|, \verb|attr_writer| oder \verb|attr_accessor|
+\end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{Objekt-Erstellung}  
+  \begin{lstlisting}%[basicstyle=\footnotesize]
+adr = Adresse.new
+adr.plz = "17268"
+adr.ort = "Templin"
+puts adr.zeile
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{comment}
   \frametitle{Methoden-Syntax}
   Klammersetzung bei Methoden-Def ist auch optional:
   \begin{lstlisting}
@@ -88,12 +128,13 @@ end
   \begin{lstlisting}
   3 + (4 * 5)
   \end{lstlisting}
+\end{comment}
 \end{frame}
 
 
 
 \begin{frame}[fragile]
-  \frametitle{Objekte und Klassen}
+  \frametitle{Klassen}
   Ruby ist fast vollständig objektorientiert. \\ \pause
   D.h. (fast) alles in Ruby ist ein $Objekt$. \\ \pause
   Jedes $Objekt$ gehört zu einer $Klasse$. \\ 

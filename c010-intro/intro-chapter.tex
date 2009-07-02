@@ -44,43 +44,41 @@
   \item i = 123
   \item i + 1000
   \item text = "welt"
-  \item "hallo " + text + "!"
+  \item \verb|"hallo " + text + "!"|
+  \item \verb|"hallo #{text}!"| \hspace{5em}  (``String-Interpolation'')
+  \item \verb|[1, 2, 3]|
   \end{itemize}
+%  \pause
+%  \lstinline|  "hallo #{text}!"| \hspace{5em}  (``String-Interpolation'')
   \pause
   Syntaktischer Hauptbestandteil in Ruby sind Ausdrücke ($Expression$s).\\
-  Jeder Ausdruck hat beim Ausführen einen Wert.\\
-  \pause
-  %\item[none]<2->
-  \begin{lstlisting}
-  text = "welt"
-  \end{lstlisting}
-  \pause
-  \lstinline|   puts "hallo " + text + "!"|
-  \pause
-  \lstinline|   puts "hallo #{text}!"| \hspace{5em}  (``String-Interpolation'')
+  Jeder Ausdruck hat beim Ausführen einen Wert. \\
+  
+  In Ruby gilt: Alle Werte sind Objekte.\\
+  Es gibt keine anderen Werte.
 
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{irb}
+  \frametitle{Direktes Ausprobieren von Ruby}
   \begin{center}
    {\LARGE irb}\\
    
    \bigskip
-   "interactive ruby"
+   ''interactive ruby''
    \bigskip
    \bigskip
    \bigskip
    \bigskip
    
   \end{center}
-   shellprompt\$ irb
+   \verb|[shell]$| \verb|irb|
 
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Ausdrücke und Werte}
-  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$}l}
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
     %{\em Ausdruck}      &   {\em Wert }  \\
     \verb|1|                   &   \verb|1|  \\ \pause
     \verb|1 + 2|               &   \verb|3|  \\ \pause
@@ -96,21 +94,36 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Namen und Werte}
+  \frametitle{Namen / Variablen}
+  Werte können einem Namen (d.h. einer Variblen) zugewiesen werden. 
+  
+  Es gibt verschiedene Arten von Variablen.\\
+  Diese werden syntaktisch unterschieden.
+  
   \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$}l}
     %{\em Ausdruck}      &   {\em Wert }  \\
-    \lstinline|1|       &   \lstinline|1|  \\
-    \lstinline|1 + 2|   &   \lstinline|3|  \\
-    \lstinline|a = 2|   &   \lstinline|2|  \\
-    \lstinline|1+2; 10+20; 17+4|  &   \lstinline|21|  \\
-    \lstinline|puts 1+2|   &   \lstinline|nil|  \\
+    \verb|a = 1|       &   lokale Variable  \\
+    \verb|$a = 1|      &   globale Variable  \\    
+    \verb|PI = 3.14|   &   Konstante  \\
+    \verb|@a = 1|      &   Instanz-Variable  \\
+    \verb|@@a = 1|    &   Klassen-Variable  \\
   \end{tabular}
   
+  Alles, was einer Variablen zugewiesen werden kann, ist ein Objekt.
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Methodenaufrufe}
-  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$}l@{\hspace{5em}}l}
+  
+  An Objekte können Methoden gesendet werden. 
+  Dies wird syntaktisch über den Punkt eingeleitet.
+  
+    \begin{center}
+    \lstinline|receiver.methodenname|     
+    \end{center}
+
+
+  \begin{tabular}[t]{l@{\hspace{1em}$\longrightarrow$\hspace{2pt}}l@{\hspace{2em}}l}
     %{\em Ausdruck}      &   {\em Wert }  \\
     \verb|1.succ|         &   \verb|2|       & (Nachfolger)     \\ \pause
     \verb|1.odd?|         &   \verb|true|    & (ungerade)     \\ \pause
@@ -121,6 +134,7 @@
     \verb|[5,7].size|     &   \verb|2|      & (Anzahl d. Elemente) \\ \pause
     \verb|[5,7,4].max|    &   \verb|7|      & (größtes Element) \\ \pause
     \verb|%w[b f e].max|  &   \verb|"f"|      &  \\ \pause
+    \verb|"a=b".split("=")|      &   \verb|["a", "b"]|       & (Länge) 
   \end{tabular}
   
   
@@ -128,8 +142,39 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Methoden-Syntax, Konventionen}
+  \frametitle{Methoden-Syntax}
   Klammersetzung bei Methoden-Parametern ist optional:
+  
+  \verb|"a=b".split("=")| \pause
+  
+  \verb|"a=b".split "="| \pause
+  
+  \smallskip
+  \verb|puts "hallo"| \pause
+  
+  \verb|puts("hallo")| \pause
+  
+  
+  \medskip 
+  In Ruby sind auch Operatoren über Methoden-Aufrufe realisiert.
+  \pause
+  
+  \medskip
+  \begin{center}
+
+  \verb|3 + 4 | \pause
+  
+  \verb|3.+ 4 | \pause
+  
+  \verb|3.+(4)| \pause
+   
+  \end{center}
+  
+  
+  
+  
+\begin{comment}  
+ 
   Methoden-Definition
   \begin{lstlisting}
   def dreifach(wert)
@@ -156,15 +201,7 @@
   \begin{lstlisting}
   puts(dreifach(2)) 
   \end{lstlisting}
-  
-  \pause
-  \begin{lstlisting}
-  3 + 4 * 5 
-  \end{lstlisting}
-  \pause
-  \begin{lstlisting}
-  3 + (4 * 5)
-  \end{lstlisting}
+\end{comment}
 \end{frame}
 
 
