@@ -48,7 +48,7 @@
     \pause
     \item Mehrere Exceptions bei \texttt{rescue} m"oglich
     \pause
-    \item Globale Variable \texttt{\$!} enth"alt letzte ausgel"oste Exceptions
+    \item Globale Variable \texttt{\$!} enth"alt letzte ausgel"oste Exception
   \end{itemize}
 \end{frame}
 
@@ -104,6 +104,7 @@
 end \\
 raise MeineException.new, 'dies ist der Text'}  \\
 \vspace{3ex}$\longrightarrow$ \texttt{raise\_exceptons.rb:19:in \`<main>\': dies ist der Text (MeineException)}
+    \pause
     \item Parameter"ubergabe bei new ist auch m"oglich\\
           \texttt{raise MeineException.new('hugo'), 'Fehler aufgetreten'}
   \end{itemize}

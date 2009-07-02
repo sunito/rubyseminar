@@ -6,25 +6,6 @@
 \lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt}
 %======== END inserted by add_gemeinsam.rb ======================
 \begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby}
-  Automatisierte Tests mit Ruby
-  \begin{itemize}
-    \item<1-> TestUnit (Standard--Bibliothek in Ruby)
-    \item<2-> RSpec (separat zu installieren)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
-  Automatisierte Tests mit Ruby
-  \begin{itemize}
-    \item TestUnit (Standard--Bibliothek in Ruby)
-    \pause
-    \item RSpec 
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
   \frametitle{Automatisierte Tests mit Ruby / TestUnit}
   Warum automatisierte Tests?
   \begin{itemize}
@@ -36,6 +17,15 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Automatisierte Tests mit Ruby}
+  Automatisierte Tests mit Ruby
+  \begin{itemize}
+    \item<1-> TestUnit (Standard--Bibliothek in Ruby)
+    \item<2-> RSpec (separat zu installieren)
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[containsverbatim]
   \frametitle{Automatisierte Tests mit Ruby / TestUnit}
 \lstinputlisting[frame=single,caption={konto.rb}]{code/konto.rb}
@@ -43,7 +33,12 @@
 
 \begin{frame}[containsverbatim]
   \frametitle{Automatisierte Tests mit Ruby / TestUnit}
-%\lstinputlisting[frame=single,caption={test$_$konto.rb}]{code/test_konto.rb}
+\lstinputlisting[frame=single,caption={test\_konto.rb}]{code/test_konto.rb}
+\end{frame}
+
+\begin{frame}[containsverbatim]
+  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
+  \lstinputlisting[frame=single,caption={Resultat}]{code/test_result}
 \end{frame}
 
 \begin{frame}
@@ -57,11 +52,6 @@
     \item GUI-Ausgabe statt nur Text m"oglich
     \item Gem ZenTest (autotest)
   \end{itemize}
-\end{frame}
-
-\begin{frame}[containsverbatim]
-  \frametitle{Automatisierte Tests mit Ruby / TestUnit}
-  \lstinputlisting[frame=single,caption={Resultat}]{code/test_result}
 \end{frame}
 
 \begin{frame}
