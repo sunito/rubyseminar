@@ -11,6 +11,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Blöcke sind wie Callbacks}
+  \pause
   Hinter jedem Methodenaufruf kann ein Block stehen.\\
   Das ist ein beliebiges Stück Code ("'Ausdruck"' / $Expression$),
   das entweder in geschweifte Klammern, oder in \path{do ... end}
@@ -20,7 +21,7 @@
   \smallskip
   \begin{lstlisting}
   blocktest do
-    puts "mittendrin"
+    puts "Hey, ich wurde aufgerufen!"
   end
   \end{lstlisting}
   \pause
@@ -57,9 +58,12 @@
     puts "nacher"
   end
   \end{lstlisting}
-  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Blöcke und Iteratoren}
   \medskip
-  Verwendung für Iteratoren:
+  Verwendung in each-Schleife:
   \begin{lstlisting}
   [2, 4, 6].each do |zahl|
     puts zahl * zahl
