@@ -1,0 +1,78 @@
+\documentclass{beamer}
+
+
+\input{gemeinsam.tex}
+
+
+\begin{document}
+\lstset{language=Ruby}
+\lstset{basicstyle=\small,numbers=none, numberstyle=\tiny, numbersep=5pt, showstringspaces=false}
+
+
+\begin{frame}[fragile]
+  \frametitle{Blöcke sind wie Callbacks}
+  Hinter jedem Methodenaufruf kann ein Block stehen.\\
+  Das ist ein beliebiges Stück Code ("'Ausdruck"' / $Expression$),
+  das entweder in geschweifte Klammern, oder in \path{do ... end}
+  eingeschlossen ist.
+  
+  \pause
+  \smallskip
+  \begin{lstlisting}
+  blocktest do
+    puts "mittendrin"
+  end
+  \end{lstlisting}
+  \pause
+  
+  \begin{lstlisting}
+  def blocktest
+    puts "vorher"
+    yield
+    puts "nacher"
+  end
+  \end{lstlisting}
+  
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Blöcke sind vielseitig...}
+  Blöcke können Parameter tragen.\\
+  
+    \pause
+  \smallskip
+  \begin{lstlisting}
+  blocktest do |wert|
+    puts "Diesen Wert erhalten: #{wert}"
+  end
+  \end{lstlisting}
+  \pause
+  
+  \begin{lstlisting}
+  def blocktest
+    puts "vorher"
+    yield "Daten, Daten, Daten"
+    puts "nacher"
+  end
+  \end{lstlisting}
+  
+  \medskip
+  Verwendung für Iteratoren:
+  \begin{lstlisting}
+  [2, 4, 6].each do |zahl|
+    puts zahl * zahl
+  end
+  \end{lstlisting}
+  \pause
+  
+  \begin{lstlisting}
+  \end{lstlisting}
+  
+  \pause
+  \begin{tabular}[t]{l@{\hspace{5em}$\longrightarrow$\hspace{5pt}}l}
+  \end{tabular}
+\end{frame}
+
+\end{document}
