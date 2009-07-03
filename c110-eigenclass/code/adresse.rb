@@ -1,15 +1,16 @@
-class Object
-  def wo_bin_ich(orts_beschreibung)
-    #puts "in #{orts_beschreibung} self=#{self} class=#{self.class}"
-  end
-end
 
 class Adresse
   attr_accessor :plz, :ort
-  wo_bin_ich "Klasse Adresse"
+  @@zuletzt_aufgerufen = nil
+  HOME = " sdkljhl"
+
+  def self.zuletzt
+    @@zuletzt_aufgerufen
+  end
+
 
   def zeile
-    wo_bin_ich "Methode zeile"
+    @@zuletzt_aufgerufen = self
     "#{@plz} #@ort"
   end
 
@@ -19,8 +20,16 @@ class Adresse
 end
 
 __END__
+adr = Adresse.new
+adr.plz = "17268"
+adr.ort = "Templin"
 
-wo_bin_ich "Toplevel"
+puts "zuletzt: #{Adresse.zuletzt}"
+puts "zeile: " + adr.zeile
+puts "zuletzt: #{Adresse.zuletzt}"
+
+__END__
+
 
 adr = Adresse.new
 adr.plz = "17268"

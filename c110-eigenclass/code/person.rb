@@ -18,14 +18,27 @@ end
 class Person
   attr_accessor :adr, :dienst_adr
   include WasIchImmerBrauche
+  include Enumerable
 
   def initialize(adr)
     @adr = adr
   end
 
+  def each
+    yield adr if adr
+    yield dienst_adr if dienst_adr
+  end
+
+  def map_alt
+    erg = []
+    each {|adr| erg << (yield adr) }
+    erg
+  end
+d
   def zeige_alle_zeilen
-    puts adr.zeile
-    puts dienst_adr.zeile
+    each do |adr|
+      puts adr.zeile
+    end
   end
 
   def * zahl
@@ -37,6 +50,19 @@ adr = Adresse.new
 adr.plz = "32000"
 adr.ort = "Hannover"
 pers = Person.new(adr)
+pers.dienst_adr = adr
+
+pers.each do |adr|
+  puts adr.zeile
+end
+
+alle_plz = pers.map do |adr|
+  adr.plz
+end
+
+p alle_plz
+
+__END__
 
 puts "ssc: #{pers.supersuperclass.inspect}"
 
@@ -58,6 +84,8 @@ x=nil
 def x.dopp
   puts "Schluss jetzt!"
 end
+
+
 
 s2 = ":sd333"
 s2.extend WasIchImmerBrauche
