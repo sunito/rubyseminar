@@ -6,8 +6,6 @@ Legende:
  °#!      Praxis!
  <<??>>   noch zu klären, wer es macht
 
-
-
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 *** Tag 1
 Ankündigung: 
@@ -131,3 +129,4 @@ Ankündigung:
 * Webseiten, Blogs
 
 ** Fragen und Antworten 40min
+
