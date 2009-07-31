@@ -1,0 +1,129 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+
+%opening
+\title{Einführung in die Programmiersprache Ruby (zwei Tage, jeweils 7-8 Stunden)}
+\author{Thomas Preymesser\\Sven Suska}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In einer zweitägigen Einführung werden die grundlegenden Aspekte der objektorientierten Programmiersprache Ruby gezeigt. 
+Dieser Kurs richtet sich an interessierte Einsteiger in die Sprache Ruby, aber auch an Personen, die schon mit Ruby on Rails gearbeitet haben und einen tiefergehenden Einblick in die dahinter stehende Sprache Ruby erhalten m"ochten. 
+Grundlegende Programmierkenntnisse in einer beliebigen anderen Sprache sind vorteilhaft.
+
+Wir bieten von diesem Kurs auch eine konzentrierte Version an, die im Rahmen eines ca. dreistündigen ''Schnupperkurses'' in die Ruby-Programmierung abgehalten werden kann.
+\end{abstract}
+
+\section*{Tag 1}
+
+\subsection*{Block 1}
+
+\begin{itemize}
+  \item Ruby Sprachelemente
+  \begin{itemize}
+    \item Zahlen, Strings
+    \item Variablen
+    \item Methoden
+      \item irb
+  \end{itemize}
+  \item Ruby Objektorientierung
+  \begin{itemize}
+    \item Klassen
+    \item Klassenvariablen, -methoden
+    \item Reflection: methods, instance\_methods
+  \end{itemize}
+  \item Iteratoren, Bl"ocke, Kontrollstrukturen
+  \begin{itemize}
+    \item Bl"ocke
+    \item Syntax der Kontrollstrukturen, if, case, while
+    \item Variablen-G"ultigkeit, Closures
+    \item Iteratoren
+    \item catch / try / Exceptions
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Block 2}
+
+\begin{itemize}
+  \item Ruby-Standard-Objektmodell
+  \begin{itemize}
+    \item Vererbung, Superklasse
+    \item Modules, Module-Mixin
+  \end{itemize}
+  \item Ruby-Spezialit"aten im Objektmodell
+  \begin{itemize}
+    \item Eigenklasse
+    \item obj $\ll$ Eigenklasse $<$ Klasse
+    \item Exceptions definieren
+  \end{itemize}
+  \item Meta-Programmierung
+  \begin{itemize}
+    \item method\_missing()
+    \item const\_missing()
+    \item define\_method()
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Block 3}
+
+\begin{itemize}
+  \item Threads, Fiber
+  \item Proc\#binding
+  \item ObjectSpace
+\end{itemize}
+
+\section*{Tag 2}
+
+\subsection*{Block 1}
+
+\begin{itemize}
+  \item Bibliotheken, Testunterst"utzung
+  \begin{itemize}
+    \item RubyGems (Kommandozeile, Versions-Bedingungen, Quellen im Netz)
+    \item Test::Unit (inkl. Metaprogramming-Aspekte)
+    \item RSpec
+  \end{itemize}
+  \item Logging
+  \item Debugger
+  \item Facets
+\end{itemize}
+
+\subsection*{Block 2}
+\begin{itemize}
+  \item Anwendung in Rails und anderen Bibliotheken
+  \item Rails
+  \begin{itemize}
+    \item Scaffolding
+    \item Anwendung von Metaprogrammierung in ActiveRecord
+    \item Zusammenspiel von Controller und Views
+    \item Fragen zu Ruby-Aspekten von Rails
+  \end{itemize}
+  \item Datamapper/Merb
+  \item Desktop-GUI-Programmierung
+  \begin{itemize}
+    \item Tk, Wx, reactive
+    \item Fx
+  \end{itemize}
+\end{itemize} 
+
+\subsection*{Block 3}
+\begin{itemize}
+  \item Ruby-Implementierungen
+  \begin{itemize}
+    \item Unterschiede Ruby 1.8 -- Ruby 1.9 (Hash-Syntax, fileutils, viele Gems noch nicht 1.9 kompatibel)
+    \item JRuby
+    \item andere Implementierungen (Rubinius)
+  \end{itemize}
+  \item Referenzen
+  \begin{itemize}
+    \item IDEs
+    \item B"ucher
+    \item Webseiten, Blogs
+  \end{itemize}
+\end{itemize}
+\end{document}
